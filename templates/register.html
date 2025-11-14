@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Registrar - PokéBooster{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">Criar Nova Conta</h2>
+
+                <form method="POST" action="{{ url_for('register') }}">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Nome de Usuário</label>
+                        <input type="text" class="form-control" id="username" name="username" required minlength="3"
+                            maxlength="80">
+                        <div class="form-text">Mínimo 3 caracteres</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="password" name="password" required
+                            minlength="6">
+                        <div class="form-text">Mínimo 6 caracteres</div>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success btn-lg">
+                            Criar Conta
+                        </button>
+                    </div>
+                </form>
+
+                <div class="text-center mt-3">
+                    <p>Já tem uma conta?
+                        <a href="{{ url_for('login') }}">Fazer Login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

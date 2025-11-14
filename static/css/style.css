@@ -1,0 +1,9 @@
+/* Estilo para Pokémon não capturados */
+.nao-capturado img {
+    opacity: 0.3;
+    filter: grayscale(100%);
+}
+
+.nao-capturado {
+    background-color: #f8f9fa;
+}
